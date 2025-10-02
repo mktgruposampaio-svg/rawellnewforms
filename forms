@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário – Energia Solar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --card-radius: 14px;
+      --label: #222;
+      --input-bg: #ffffff;
+      --input-text: #222;
+      --placeholder: #9aa3a7;
+      --stroke: rgba(0,0,0,.1);
+      --button: #ffd200;
+      --button-text: #1a1a1a;
+      --focus: #30b3a4;
+    }
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:"Poppins", system-ui, sans-serif;
+      background: #f7f7f9;
+      padding: 24px;
+      display:grid;
+      place-items:center;
+      min-height:100svh;
+    }
+
+    .card{
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border: 1px solid var(--stroke);
+      border-radius: var(--card-radius);
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    .title{ font-weight:600; font-size:20px; margin:0 0 12px; color:#111; }
+    .desc{ margin:0 0 18px; color:#444; font-size:14px; }
+
+    .field{ margin-bottom: 12px; }
+
+    label{
+      display:block;
+      font-size:13px;
+      color: var(--label);
+      margin-bottom:6px;
+      letter-spacing:.2px;
+      font-weight:500;
+    }
+
+    input, select, button{
+      width:100%;
+      height:49px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,.15);
+      outline:none;
+      font-size:14px;
+      transition: box-shadow .2s ease, border-color .2s ease;
+      background: var(--input-bg);
+      color: var(--input-text);
+      padding:0 12px;
+    }
+
+    input::placeholder{ color: var(--placeholder); font-size:13px; }
+
+    select{
+      appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #666 50%),
+        linear-gradient(135deg, #666 50%, transparent 50%),
+        linear-gradient(to right, transparent, transparent);
+      background-position:
+        calc(100% - 16px) 16px,
+        calc(100% - 10px) 16px,
+        100% 0;
+      background-size: 5px 5px, 5px 5px, 2.5em 100%;
+      background-repeat:no-repeat;
+      padding-right:36px;
+    }
+
+    input:focus, select:focus{
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(48,179,164,.18);
+    }
+
+    button{
+      background: var(--button);
+      color: var(--button-text);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+      border:none;
+      cursor:pointer;
+      font-size:14px;
+    }
+
+    button:hover{ filter:brightness(0.98); }
+    button:active{ transform: translateY(1px); }
+    .small{ font-size:12px; color:#666; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <form class="card"
+        action="https://formsubmit.co/joaoaguilar25062001@gmail.com"
+        method="POST">
+
+    <h1 class="title">Simule sua economia com energia solar</h1>
+    <p class="desc">Preencha os dados e nossa equipe entra em contato.</p>
+
+    <div class="field">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <div class="field">
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="Ex: (85) 99810-5050" required>
+    </div>
+
+    <div class="field">
+      <label for="consumo">Consumo na fatura de energia</label>
+      <select id="consumo" name="consumo" required>
+        <option value="" disabled selected>Selecione...</option>
+        <option>R$50–R$250</option>
+        <option>R$250–R$500</option>
+        <option>R$500–R$1.000</option>
+        <option>Mais de R$1.000</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" name="cidade" required>
+    </div>
+
+    <div class="field">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <!-- Config extra FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Novo formulário enviado do site">
+    <input type="hidden" name="_next" value="thanks.html">
+
+    <button type="submit">Enviar</button>
+    <p class="small">Ao enviar, você concorda em receber nosso contato comercial.</p>
+  </form>
+</body>
+</html>
